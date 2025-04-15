@@ -259,7 +259,7 @@ const total = users.reduce((acc, user) => {
   return acc + user.name;
 }, "");
 
-console.log(total);
+console.log(total, "totallll");
 
 const grouped = users.reduce((tot, curr) => {
   const city = curr.address.city;
@@ -332,7 +332,7 @@ for (let key in user) {
 }
 
 const userNames = users.map((el) => el.username);
-console.log(userNames, "userNames");
+console.log(userNames, "userNamesss");
 
 const transaction = [
   {
@@ -349,7 +349,6 @@ const transaction = [
     id: 3,
     currency: "EUR",
     amount: 100,
-    r,
   },
   {
     id: 4,
@@ -366,3 +365,67 @@ const totalByCurrency = transaction.reduce((acc, curr) => {
 }, {});
 
 console.log(totalByCurrency);
+
+// 6) const movies = [
+//   { title: "Inception", year: 2010, rating: 8.8 },
+//   { title: "Interstellar", year: 2014, rating: 8.6 },
+//   { title: "Tenet", year: 2020, rating: 7.5 },
+//   { title: "Dunkirk", year: 2017, rating: 7.9 },
+// ];
+// * გაფილტრეთ მარტო ისეთი ფილმები რომელთა რეიტინგიც არის 8ზე მეტი
+// * ამოიღეთ მხოლოდ სახელები
+// * დაალაგეთ ეს სახელები ანბანის მიხედვით
+
+const movies = [
+  { title: "Inception", year: 2010, rating: 8.8 },
+  { title: "Interstellar", year: 2014, rating: 8.6 },
+  { title: "Tenet", year: 2020, rating: 7.5 },
+  { title: "Dunkirk", year: 2017, rating: 7.9 },
+];
+const filteredMovies = movies.filter((movie) => movie.rating > 8);
+
+console.log(filteredMovies, "filteredMovies");
+
+const titles = movies.map((movie) => movie.title);
+
+console.log(titles, "titles");
+
+titles.sort((a, b) => a.localeCompare(b));
+console.log(titles, "sorted titles");
+
+// 7) const students = [
+//   { name: "Lia", scores: [90, 85, 100] },
+//   { name: "Tom", scores: [70, 60, 75] },
+//   { name: "Mia", scores: [88, 92, 95] },
+// ];
+// * გამოიყენეთ map და reduce მეთოდები და დაუმატეთ თითეულ ობიექტს average ფილდი შემდეგ გაფილტრეთ და დააბრუნეთ მხოლოდ 85ზე მეტი ვისაც აქვს საშუალო ქულა ეგ სტუდენდები.
+
+const students = [
+  { name: "Lia", scores: [90, 85, 100] },
+  { name: "Tom", scores: [70, 60, 75] },
+  { name: "Mia", scores: [88, 92, 95] },
+];
+
+const studentsWithAverage = students.map((student) => {
+  console.log(student);
+  const average =
+    student.scores.reduce((acc, score) => acc + score, 0) /
+    student.scores.length;
+
+  return { ...student, average };
+});
+
+const filteredStudents = studentsWithAverage.filter(
+  (student) => student.average > 85
+);
+
+console.log(filteredStudents, "filteredStudents");
+
+//8) const employees = {
+//   alice: { department: "HR", active: true },
+//   bob: { department: "Engineering", active: false },
+//   charlie: { department: "Engineering", active: true },
+// };
+// * გადაუარეთ თითოეულ ობიექტს Object.entries მეთოდით, დაითვალეთ რამდენი აქტიური იუზერია თითოეულ დეპარტამენტში და დააბრუნეთ შემდეგი ობიექტი:
+// { HR: 1, Engineering: 1 }
+
