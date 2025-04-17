@@ -30,13 +30,18 @@ class Animal {
     this.name = name;
   }
   alive() {
-    console.log(`aliveee`);
+    console.log(`${name}aliveee`);
   }
 }
 
-class Bird extends Animal {}
+class Bird extends Animal {
+  constuctor(name) {
+    super(name);
+    this.breed = breed;
+  }
+}
 
-const chiti = new Bird();
+const chiti = new Bird("ჩიტი");
 chiti.alive();
 
 class Dog extends Animal {
