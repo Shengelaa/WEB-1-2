@@ -137,8 +137,8 @@ input2.addEventListener(
       .map(
         (el) =>
           `
-        <h1>${el.description}</h1>
-        <h1>${el.id}</h1>`
+        <h3>${el.description}</h3>
+        <p>${el.id}</p>`
       )
       .join("");
   }, 300)
