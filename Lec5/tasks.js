@@ -78,3 +78,6 @@ async function mine() {
 }
 
 mine();
+
+//4) Write a random text into a file named text.txt.
+// Then, read this file and count how many vowels are present.
