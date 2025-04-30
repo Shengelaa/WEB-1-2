@@ -193,3 +193,6 @@ async function mine() {
 }
 
 mine();
+
+//CRUD
+//Create, Read, Update, and Delete
