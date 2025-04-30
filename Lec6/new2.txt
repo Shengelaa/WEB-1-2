@@ -1,0 +1,6 @@
+ -File: main.js
+ -File: package.json
+ -File: result,txt
+ -File: result.txt
+ -File: result2.txt
+Dir: second

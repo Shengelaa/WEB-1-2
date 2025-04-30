@@ -1,0 +1,43 @@
+ -File: main.js
+ -File: new2.txt
+ -File: package.json
+ -File: result.txt
+ -File: result2.txt
+Dir: second
+ -File: main.js
+ -File: new2.txt
+ -File: package.json
+ -File: result.txt
+ -File: result2.txt
+Dir: second
+ -File: main.js
+ -File: new2.txt
+ -File: package.json
+ -File: result.txt
+ -File: result2.txt
+Dir: second
+ -File: main.js
+ -File: new2.txt
+ -File: package.json
+ -File: result.txt
+ -File: result2.txt
+Dir: second
+ -File: main.js
+ -File: new2.txt
+ -File: package.json
+ -File: result.txt
+ -File: result2.txt
+Dir: second
+ -File: main.js
+ -File: new2.txt
+ -File: package.json
+ -File: result.txt
+ -File: result2.txt
+Dir: second
+Dir: test
+ -File: second.js
+Dir: third
+ -File: firrst.txt
+ -File: first.txt
+ -File: third.js
+ -File: secondd.txt
