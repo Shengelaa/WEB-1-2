@@ -5,6 +5,7 @@ for (let i = 0; i < 5; i++) {
 }
 
 const nums = [1, 2, 3, 4, 5];
+
 const odd = nums.filter((nums) => nums % 2 === 0);
 console.log(odd);
 
@@ -428,4 +429,3 @@ console.log(filteredStudents, "filteredStudents");
 // };
 // * გადაუარეთ თითოეულ ობიექტს Object.entries მეთოდით, დაითვალეთ რამდენი აქტიური იუზერია თითოეულ დეპარტამენტში და დააბრუნეთ შემდეგი ობიექტი:
 // { HR: 1, Engineering: 1 }
-
