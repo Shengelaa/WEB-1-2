@@ -1,0 +1,21 @@
+{
+  "name": "lec10",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "main.js",
+  "bin": {
+    "movie-cli": "main.js",
+    "crypto-cli": "crypto.js",
+    "convert-cli": "convert.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "commander": "^13.1.0"
+  }
+}

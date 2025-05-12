@@ -1,0 +1,9 @@
+[
+  { "id": 1, "name": "hello", "genre": "horror", "rating": 2 },
+  { "id": 3, "name": "superman", "genre": "Fantastic", "rating": 3 },
+  { "id": 4, "name": "spiderrrr", "genre": "Fantastic", "rating": 4 },
+  { "id": 5, "name": "annabelle", "genre": "horror", "rating": 5 },
+  { "id": 6, "name": "loli123", "genre": "Fantastic", "rating": 6 },
+  { "id": 7, "name": "classmates", "genre": "horror", "rating": 7 },
+  { "id": 8, "name": "hangover", "genre": "commedy", "rating": 8 }
+]
