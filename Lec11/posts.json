@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "content": "grara",
+    "email": "nika@gmail.com",
+    "createdAt": "2025-05-14T17:19:21.405Z"
+  },
+  {
+    "id": 2,
+    "content": "pirveli post",
+    "email": "nikra@gmail.com",
+    "createdAt": "2025-05-14T17:19:21.405Z"
+  },
+  {
+    "id": 3,
+    "content": "pirveli post",
+    "email": "nirrka@gmail.com",
+    "createdAt": "2025-05-14T17:19:21.405Z"
+  }
+]
