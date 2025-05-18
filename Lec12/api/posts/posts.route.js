@@ -6,7 +6,7 @@ const {
   deletePostById,
   updatePostById,
 } = require("./posts.service");
-const hasEmailMiddleware = require("../../middlewares/hasEmail.middleware");
+const hasKey = require("../../middlewares/Haskey");
 
 const postRoute = Router();
 
