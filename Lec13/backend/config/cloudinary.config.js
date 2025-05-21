@@ -12,7 +12,7 @@ cloudinary.config({
 const storage = new CloudinaryStorage({
   cloudinary: cloudinary,
   params: {
-    folder: "uploads", // Cloudinary folder
+    folder: "uploads",
     allowed_formats: ["jpg", "png", "jpeg", "svg"],
   },
 });
@@ -24,4 +24,13 @@ const upload = multer({
   },
 });
 
-module.exports = { upload };
+const deleteFromCloudinary = async (publicId) => {
+  try {
+    const result = await cloudinary.uploader.destroy(publicId);
+    console.log("Cloudinary delete result:", result);
+  } catch (error) {
+    console.error("Error deleting from Cloudinary:", error);
+  }
+};
+
+module.exports = { upload, deleteFromCloudinary };

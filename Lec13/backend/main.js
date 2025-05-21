@@ -1,7 +1,7 @@
 const express = require("express");
 const multer = require("multer");
 const path = require("path");
-const { upload } = require("./config/cloudinary.config");
+const { upload, deleteFromCloudinary } = require("./config/cloudinary.config");
 const fs = require("fs/promises");
 const cors = require("cors");
 
@@ -85,6 +85,20 @@ app.post("/users", upload.single("avatar"), async (req, res) => {
 
   await fs.writeFile("users.json", JSON.stringify(users));
   res.status(201).json({ message: "created" });
+});
+
+app.delete("/users/:id", async (req, res) => {
+  const id = Number(req.params.id);
+  const users = JSON.parse(await fs.readFile("users.json", "utf-8"));
+  const index = users.findIndex((el) => el.id === id);
+  const fileName = users[index].avatar.split("uploads/")[1];
+  const fileId = fileName.split(".")[0];
+  const publicFileId = `uploads/${fileId}`;
+  await deleteFromCloudinary(publicFileId);
+
+  users.splice(index, 1);
+  await fs.writeFile("users.json", JSON.stringify(users));
+  res.json({ messagE: "scces" });
 });
 
 app.listen(4000, () => {
