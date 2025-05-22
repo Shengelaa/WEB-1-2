@@ -27,6 +27,7 @@ const upload = multer({
 const deleteFromCloudinary = async (publicId) => {
   try {
     const result = await cloudinary.uploader.destroy(publicId);
+    console.log(publicId)
     console.log("Cloudinary delete result:", result);
   } catch (error) {
     console.error("Error deleting from Cloudinary:", error);

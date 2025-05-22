@@ -69,7 +69,7 @@ app.put("/users/:id", upload.single("avatar"), async (req, res) => {
 app.post("/users", upload.single("avatar"), async (req, res) => {
   const { fullName, email } = req.body;
   if (!fullName || !email) {
-    return res.status(400).json(error, "error");
+    return res.status(400).json({ error: "user not found" });
   }
 
   const users = JSON.parse(await fs.readFile("users.json", "utf-8"));
