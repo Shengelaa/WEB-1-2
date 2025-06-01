@@ -130,21 +130,18 @@ export default function HomeClient() {
     }
   };
 
-  // Start editing a post: populate editing states
   const startEditingPost = (post: any) => {
     setEditingPostId(post._id);
     setEditingTitle(post.title);
     setEditingContent(post.content);
   };
 
-  // Cancel editing
   const cancelEditing = () => {
     setEditingPostId(null);
     setEditingTitle("");
     setEditingContent("");
   };
 
-  // Handle updating the post
   const handleUpdatePost = async () => {
     if (!editingTitle.trim() || !editingContent.trim()) {
       alert("Please fill title and content");
