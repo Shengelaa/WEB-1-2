@@ -1,144 +1,268 @@
-let userName: string = "giorgi";
+// let userName = "giorgi"
 
-let age: number = 20;
+// let age: number = 20
+// let isSmoker: boolean = false
 
-let isSmoker: boolean = false;
+// function sum(a: number, b: number, isAbs?: boolean): number {
+//     return isAbs ? Math.abs(a + b) : a + b
+// }
 
-console.log(userName);
+// function sub({ num1, num2 }: { num1?: number, num2?: number }) {
 
-function sum(a: number, b: number, isAbs?: boolean): number {
-  return isAbs ? Math.abs(a + b) : a - b;
+// }
+
+// sub({ num1: 10, num2: 20 })
+
+// const result = sum(20, 20)
+// console.log(result)
+
+// const res2 = sum(-20, -50, true)
+// console.log(res2)
+
+// const nums: (number | string)[] = [1, 2, 3, 'gela']
+
+// function log<T>(msg: T) {
+//     console.log(msg)
+// }
+
+// log<string>('gela')
+
+// interface IAddress {
+//     home: string
+//     work: string
+// }
+
+// interface IUser {
+//     name: string,
+//     age: number
+//     isSmoker: boolean
+//     address: IAddress
+// }
+
+// interface IStudent extends IUser {
+//     grade: number
+// }
+
+// type UsetType = {
+//     name: string,
+//     age: number
+//     isSmoker: boolean
+// }
+
+// function changeUserName(user: IStudent) {
+
+// }
+
+// type BtnVariantType = 'sm' | 'md' | 'lg'
+
+// function renderBtn(size: BtnVariantType) {
+//     if (size === 'sm') {
+
+//     }
+// }
+
+// class Student {
+//     private name
+//     public age
+//     protected grade
+//     readonly fee = 200
+//     constructor(name: string, age: number, grade: number){
+//         this.name = name
+//         this.age = age
+//         this.grade = grade
+//     }
+
+//     sayHello(){
+//         console.log(`Hello ${this.name}`)
+//     }
+// }
+
+// class ChildStundt extends Student{
+//     constructor(name: string, age: number, grade: number){
+//         super(name, age, grade)
+//     }
+
+//     getGrade(){
+//         this.grade  =10
+//     }
+// }
+
+// const child1 = new ChildStundt('ra', 11, 12)
+
+// const student1 = new Student('giorgi', 22, 87)
+// student1.sayHello()
+
+// type UserType = {
+//     id: number;
+//     name: string;
+// }
+// const user = [
+//     {
+//         id: 1,
+//         name: "giorgi"
+//     }
+// ]
+
+// function getUsers(): Promise<UserType[]>{
+//     return new Promise((res, rej) => {
+//         setTimeout(() => {
+//             res(user)
+//         }, 2000)
+//     })
+// }
+
+// function getFirstElement<T>(arr: T[]): T{
+//     return arr[0]
+// }
+
+// getFirstElement<string | number>(['a', 'b', 'c'])
+
+// interface Foo{
+//     name: string
+//     age: number
+// }
+
+// function getNames<T extends {name: string}>(arr: T[]){
+//     return arr.map(el => el.name)
+// }
+
+// getNames([{name: 'rame', age:1}])
+
+// function getProps<T, K extends keyof T>(arr: T[], key: K): T[K][] {
+//   return arr.map(el => el[key]);
+// }
+
+// getProps([{ name: 'rame', age: 1 }], 'name');
+
+type ArrTuple = [string, number];
+
+const arr: ArrTuple = ["first", 2];
+
+type UseStateTyple = [number, Function];
+
+function useState(initValue: number): UseStateTyple {
+  const value = initValue;
+  function setState() {}
+  return [value, setState];
 }
 
-function sub({ num1, num2 }: { num1?: number; num2?: number }) {}
+const [count, setCount] = useState(0);
 
-sub({ num1: 10, num2: 20 });
-
-const result = sum(20, 20);
-
-console.log(result);
-
-const res2 = sum(-20, -50, true);
-console.log(res2);
-
-const nums: number[] = [1, 2, 3];
-const nums2: (number | string)[] = [1, 2, 3, "gela"];
-console.log(nums2);
-
-function log(msg: any) {
-  console.log(msg);
-}
-
-log(nums2);
-interface IAddress {
-  home: string;
-  work: string;
-}
-interface IUser {
-  name: string;
-  age: number;
-  isSmoker: boolean;
-  address: IAddress;
-}
-
-interface IStudent extends IUser {
-  grade: number;
-}
-
-type UserType = {
-  name: string;
-  age: number;
-  isSmoker: boolean;
+const RoleObj = {
+  USER: "user",
+  EDITOR: "editor",
+  ADMIN: "admin",
 };
 
-type BtnVariantType = "sm" | "md" | "lg";
+enum Role {
+  USER = "user",
+  EDITOR = "editor",
+  ADMIN = "admin",
+}
 
-function changeUserName(user: IUser) {}
+enum StatusCodes {
+  NOTFOUND = 404,
+  SUCCESS = 200,
+  CREATED = 201,
+}
 
-function renderBtn(size: BtnVariantType) {
-  if (size === "sm") {
-    console.log("size is small");
-  } else if ((size = "md")) {
-    console.log("size is medium");
-  } else {
-    console.log("size is large");
+function getSomething(msg: string | number | string[]) {
+  if (!msg) return;
+  if (typeof msg === "string") {
+    msg;
+  } else if (typeof msg === "number") {
+    msg;
+  } else if (
+    msg &&
+    typeof msg === "object" &&
+    msg.length > 0 &&
+    msg.every((el) => typeof el === "string")
+  ) {
   }
 }
 
-renderBtn("sm");
+type Adress = {
+  home: string;
+  work: string;
+};
 
-class Student {
-  public name;
-  private age;
-  protected grade;
-  readonly fee;
-  constructor(name: string, age: number, grade: number, fee: number) {
-    this.name = name;
-    this.age = age;
-    this.grade = grade;
-    this.fee = fee;
+type User = {
+  name?: string;
+  age?: number;
+  isSmoker: boolean;
+  address: Adress;
+  email: string;
+  id: number;
+};
+
+type Address1 = Partial<Adress>;
+type OptionalUser = Partial<User>;
+
+const onj: OptionalUser & Address1 = {
+  isSmoker: false,
+  name: "",
+  address: {
+    work: "",
+    home: "",
+  },
+};
+
+type BtnVariant = "sm" | "md" | "lg";
+
+const obj1: Record<BtnVariant, string> = {
+  lg: "asd",
+  md: "asd",
+  sm: "asd",
+};
+
+type Student = Pick<User, "name" | "age" | "email"> & {
+  grades: number[];
+};
+
+type User2 = Omit<User, "isSmoker" | "address"> & {
+  rameSxva: string;
+};
+
+type Editor = {
+  gender: "F" | "M";
+};
+
+type Admin = User &
+  Editor & {
+    permition: string;
+  };
+
+const err = {
+  message: "wrong",
+};
+
+const getErrorMessage = (err: unknown) => {
+  if (!err) return;
+  if (typeof err === "string") {
+    return err;
+  } else if (typeof err === "object" && "message" in err) {
+    return err.message;
+  } else if (typeof err === "object" && Array.isArray(err)) {
+    return err.map((el) => {
+      if (el.message) {
+        return el.message;
+      }
+    });
   }
+};
 
-  sayHello() {
-    console.log("hello " + this.name);
+type NeverType = string & number;
+
+type Role1 = "admin" | "user" | "superAdmin";
+
+function doSomething(role: Role1) {
+  switch (role) {
+    case "admin":
+      console.log("adniu");
+      break;
+    case "user":
+      console.log("user");
+      break;
+    default:
   }
-}
-class ChildStudent extends Student {
-  constructor(name: string, age: number, grade: number, fee: number) {
-    super(name, age, grade, fee);
-  }
-  getGrade() {
-    this.grade = -10;
-  }
-}
-const child1 = new ChildStudent("ra", 11, 12, 15);
-
-const student1 = new Student("giorgi", 27, 75, 15);
-student1.name = "mamuka";
-student1.sayHello();
-
-type UserType = {
-    id: number;
-    name: string;
-}
-const user = [
-    {
-        id: 1,
-        name: "giorgi"
-    }
-]
-
-function getUsers(): Promise<UserType[]>{
-    return new Promise((res, rej) => {
-   V       setTimeout(() => {
-            res(user)
-        }, 2000)
-    })
-}
-
-
-
-function getFirstElement<T>(arr: T[]): T{
-    return arr[0]
-}
-
-getFirstElement<string | number>(['a', 'b', 'c'])
-
-interface Foo{
-    name: string
-    age: number
-}
-
-function getNames<T extends {name: string}>(arr: T[]){
-    return arr.map(el => el.name)
-}
-
-getNames([{name: 'rame', age:1}])
-
-
-function getProps<T, K extends keyof T>(arr: T[], key: K): T[K][] {
-  return arr.map(el => el[key]);
-}
-
-getProps([{ name: 'rame', age: 1 }], 'name');
--+
+}         

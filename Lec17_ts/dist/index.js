@@ -1,57 +1,85 @@
 "use strict";
-let userName = "giorgi";
-let age = 20;
-let isSmoker = false;
-console.log(userName);
-function sum(a, b, isAbs) {
-    return isAbs ? Math.abs(a + b) : a - b;
+// let userName = "giorgi"
+const arr = ["first", 2];
+function useState(initValue) {
+    const value = initValue;
+    function setState() { }
+    return [value, setState];
 }
-function sub({ num1, num2 }) { }
-sub({ num1: 10, num2: 20 });
-const result = sum(20, 20);
-console.log(result);
-const res2 = sum(-20, -50, true);
-console.log(res2);
-const nums = [1, 2, 3];
-const nums2 = [1, 2, 3, "gela"];
-console.log(nums2);
-function log(msg) {
-    console.log(msg);
-}
-log(nums2);
-function changeUserName(user) { }
-function renderBtn(size) {
-    if (size === "sm") {
-        console.log("size is small");
+const [count, setCount] = useState(0);
+const RoleObj = {
+    USER: "user",
+    EDITOR: "editor",
+    ADMIN: "admin",
+};
+var Role;
+(function (Role) {
+    Role["USER"] = "user";
+    Role["EDITOR"] = "editor";
+    Role["ADMIN"] = "admin";
+})(Role || (Role = {}));
+var StatusCodes;
+(function (StatusCodes) {
+    StatusCodes[StatusCodes["NOTFOUND"] = 404] = "NOTFOUND";
+    StatusCodes[StatusCodes["SUCCESS"] = 200] = "SUCCESS";
+    StatusCodes[StatusCodes["CREATED"] = 201] = "CREATED";
+})(StatusCodes || (StatusCodes = {}));
+function getSomething(msg) {
+    if (!msg)
+        return;
+    if (typeof msg === "string") {
+        msg;
     }
-    else if ((size = "md")) {
-        console.log("size is medium");
+    else if (typeof msg === "number") {
+        msg;
     }
-    else {
-        console.log("size is large");
-    }
-}
-renderBtn("sm");
-class Student {
-    constructor(name, age, grade, fee) {
-        this.name = name;
-        this.age = age;
-        this.grade = grade;
-        this.fee = fee;
-    }
-    sayHello() {
-        console.log("hello " + this.name);
+    else if (msg &&
+        typeof msg === "object" &&
+        msg.length > 0 &&
+        msg.every((el) => typeof el === "string")) {
     }
 }
-class ChildStudent extends Student {
-    constructor(name, age, grade, fee) {
-        super(name, age, grade, fee);
+const onj = {
+    isSmoker: false,
+    name: "",
+    address: {
+        work: "",
+        home: "",
+    },
+};
+const obj1 = {
+    lg: "asd",
+    md: "asd",
+    sm: "asd",
+};
+const err = {
+    message: "wrong",
+};
+const getErrorMessage = (err) => {
+    if (!err)
+        return;
+    if (typeof err === "string") {
+        return err;
     }
-    getGrade() {
-        this.grade = -10;
+    else if (typeof err === "object" && "message" in err) {
+        return err.message;
+    }
+    else if (typeof err === "object" && Array.isArray(err)) {
+        return err.map((el) => {
+            if (el.message) {
+                return el.message;
+            }
+        });
+    }
+};
+function doSomething(role) {
+    switch (role) {
+        case "admin":
+            console.log("adniu");
+            break;
+        case "user":
+            console.log("user");
+            break;
+        default:
     }
 }
-const child1 = new ChildStudent("ra", 11, 12, 15);
-const student1 = new Student("giorgi", 27, 75, 15);
-student1.name = "mamuka";
-student1.sayHello();
