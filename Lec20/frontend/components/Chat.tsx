@@ -63,7 +63,7 @@ export default function Chat({ roomId, userEmail }: PropType) {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-200 to-indigo-300 flex flex-col items-center p-6">
+    <div className="min-h-screen w-full  bg-gradient-to-br from-purple-200 to-indigo-300 flex flex-col items-center p-6">
       <div className="w-full max-w-3xl bg-white shadow-xl rounded-xl p-6 flex flex-col">
         <header className="flex justify-between items-center mb-6">
           <h1 className="text-3xl font-extrabold text-purple-800 flex items-center gap-2">
