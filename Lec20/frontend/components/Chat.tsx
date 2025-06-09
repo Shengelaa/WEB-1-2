@@ -15,9 +15,9 @@ export default function Chat({ roomId, userEmail }: PropType) {
   const [messages, setMessages] = useState<MessageType[]>([]);
   const [msg, setMsg] = useState("");
   const messagesEndRef = useRef<HTMLDivElement>(null);
-  const listenerAttached = useRef(false); // <-- Add this ref
+  const listenerAttached = useRef(false);
 
-  // Scroll to bottom when messages update
+
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   };

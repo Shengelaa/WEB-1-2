@@ -58,7 +58,6 @@ export default function Home() {
             🌐 Real-Time Chat App
           </h1>
 
-          {/* Echo Chat Section */}
           <section className="bg-white p-8 rounded-2xl shadow-xl ring-1 ring-indigo-200 hover:ring-indigo-300 transition">
             <h2 className="text-2xl font-semibold mb-6 text-indigo-700 border-b border-indigo-100 pb-2">
               Echo Chat
@@ -97,7 +96,6 @@ export default function Home() {
             </div>
           </section>
 
-          {/* Group Chat Section */}
           <section className="bg-white p-8 rounded-2xl shadow-xl ring-1 ring-green-200 hover:ring-green-300 transition">
             <h2 className="text-2xl font-semibold mb-6 text-green-700 border-b border-green-100 pb-2">
               Group Chat
@@ -166,6 +164,7 @@ export default function Home() {
               >
                 Join Chat Room
               </button>
+              <input type="text" />
             </form>
           </section>
         </div>
